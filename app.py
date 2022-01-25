@@ -314,11 +314,11 @@ def update_plot(input_produto, input_country):
                     x = 'Mes_Vendas_Num',
                     y= 'Faturamento', 
                     color = 'Loja',
-                    labels = dict(Mes_Vendas_Num="Mês", Faturamento= "", font_size=8))
+                    labels = dict(Mes_Vendas_Num="Mês", Faturamento= "Total", font_size=8))
     line_graph.update_xaxes(
     ticktext=["Janeiro","Fevereiro","Marco" ,"Abril","Maio" ,"Junho","Julho", "Agosto","Setembro","Outubro","Novembro","Dezembro"],
     tickvals=[1,2,3,4,5,6,7,8,9,10,11,12],
-    tickwidth=3, tickfont=dict(color='black', size=10))
+    tickwidth=3, tickfont=dict(color='black', size=12))
     line_graph.update_layout(title_font_size=16)
     line_graph.update_layout(hoverlabel=dict(font_size=14))
     line_graph.update_layout(plot_bgcolor="#F5F5F5")
@@ -365,7 +365,7 @@ def update_plot(input_produto, input_country):
     bar_graph.update_layout(showlegend=False, title_font_size=16)
     bar_graph.update_traces(hovertemplate='<b>Cidade</b> = %{label}<br><b>Total</b> = %{value}<extra></extra>')
     bar_graph.update_layout(plot_bgcolor="#F5F5F5")
-    bar_graph.update_layout(hoverlabel=dict(bgcolor="white",font_size=16))    
+    bar_graph.update_layout(hoverlabel=dict(bgcolor="white",font_size=14))    
     bar_graph.update_yaxes(tickwidth=3, tickfont=dict(color="black", size=12))
     return bar_graph
 
