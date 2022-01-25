@@ -141,14 +141,14 @@ app.layout = dbc.Container([
                     dcc.Graph(id='line_graph', figure={}, config={'displayModeBar': False}),
                 ])
             ]),
-        ], width=6),
+        ], width=8),
         dbc.Col([
             dbc.Card([
                 dbc.CardBody([
                     dcc.Graph(id='tree_fig', figure={}, config={'displayModeBar': False}),
                 ])
             ]),
-        ], width=4),
+        ], width=2),
     ],className='mb-2 bg-light'),
 ], className= "bg-light", fluid=True)
 
