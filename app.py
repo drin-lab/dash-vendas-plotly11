@@ -22,7 +22,7 @@ app.layout = dbc.Container([
     dbc.Row([
         dbc.Col([
             dbc.Card([
-                dbc.CardBody(html.H2("[Python] Dash Vendas",className="fw-bold")) 
+                dbc.CardBody(html.H4("[Python] Dash Vendas",className="fw-bold")) 
             ], color = "#97A88C", className='mb-2', style={'height':'18vh' }),            
         ], width=2),
         dbc.Col([
@@ -78,7 +78,7 @@ app.layout = dbc.Container([
     dbc.Row([
         dbc.Col([
             dbc.Card([
-                dbc.CardHeader('Faturamento', className="fw-bold fs-4 text"),
+                dbc.CardHeader('Faturamento', className="fw-bold fs-6 text"),
                 dbc.CardBody([
                     html.H5(id='content-connections', children="000")
                 ], style={'textAlign':'center'})
@@ -86,7 +86,7 @@ app.layout = dbc.Container([
         ], width=2),
         dbc.Col([
             dbc.Card([
-                dbc.CardHeader('Qtd vendas', className="fw-bold fs-4 text"),
+                dbc.CardHeader('Qtd vendas', className="fw-bold fs-6 text"),
                 dbc.CardBody([
                     html.H5(id='content-companies', children="000")
                 ], style={'textAlign':'center'})
@@ -94,7 +94,7 @@ app.layout = dbc.Container([
         ], width=2),
         dbc.Col([
             dbc.Card([
-                dbc.CardHeader('Preço Médio',className="fw-bold fs-4 text"),
+                dbc.CardHeader('Preço Médio',className="fw-bold fs-6 text"),
                 dbc.CardBody([                    
                     html.H5(id='content-msg-in', children="000")
                 ], style={'textAlign':'center'})
@@ -102,7 +102,7 @@ app.layout = dbc.Container([
         ], width=2),
         dbc.Col([
             dbc.Card([
-                dbc.CardHeader('Itens únicos', className="fw-bold fs-4 text"),
+                dbc.CardHeader('Itens únicos', className="fw-bold fs-6 text"),
                 dbc.CardBody([
                     html.H5(id='content-msg-out', children="000")
                 ], style={'textAlign': 'center'})
@@ -110,7 +110,7 @@ app.layout = dbc.Container([
         ], width=2),
         dbc.Col([
             dbc.Card([
-                dbc.CardHeader('Qtd devoluções', className="fw-bold fs-4 text" ),
+                dbc.CardHeader('Qtd devoluções', className="fw-bold fs-6 text" ),
                 dbc.CardBody([
                     html.H5(id='content-reactions', children="000")
                 ], style={'textAlign': 'center'})
@@ -283,10 +283,10 @@ def update_plot(input_country, input_product):
                             hover_data=["Total"],
                             title="Faturamento por produto",
                             labels = dict(Produto="", Total="Faturamento"))
-    bar_fig_produto.update_layout(showlegend=False, title_font_size=22)
-    bar_fig_produto.update_xaxes(tickwidth=3, tickfont=dict(color="black", size=18))
+    bar_fig_produto.update_layout(showlegend=False, title_font_size=16)
+    bar_fig_produto.update_xaxes(tickwidth=3, tickfont=dict(color="black", size=14))
     bar_fig_produto.update_traces(hovertemplate='<b>Produto</b> = %{label}<br><b>Total</b> = %{value}<extra></extra>')
-    bar_fig_produto.update_layout(hoverlabel=dict(bgcolor="white",font_size=18))
+    bar_fig_produto.update_layout(hoverlabel=dict(bgcolor="white",font_size=16))
     bar_fig_produto.update_layout(plot_bgcolor="#F5F5F5")
 
     return bar_fig_produto
@@ -318,9 +318,9 @@ def update_plot(input_produto, input_country):
     line_graph.update_xaxes(
     ticktext=["Janeiro","Fevereiro","Marco" ,"Abril","Maio" ,"Junho","Julho", "Agosto","Setembro","Outubro","Novembro","Dezembro"],
     tickvals=[1,2,3,4,5,6,7,8,9,10,11,12],
-    tickwidth=3, tickfont=dict(color='black', size=16))
-    line_graph.update_layout(title_font_size=22)
-    line_graph.update_layout(hoverlabel=dict(font_size=18))
+    tickwidth=3, tickfont=dict(color='black', size=14))
+    line_graph.update_layout(title_font_size=16)
+    line_graph.update_layout(hoverlabel=dict(font_size=16))
     line_graph.update_layout(plot_bgcolor="#F5F5F5")
     line_graph.update_traces(mode='lines+markers')
     
@@ -362,11 +362,11 @@ def update_plot(input_produto, input_country):
                     color_discrete_map={'Sao Paulo':'#abb0ca','Salvador':'#e5cbb0','Rio de Janeiro':'#97A88C','Porto Alegre':'#e02844',
     'Fortaleza':'#6d6e8c','Curitiba':'#554f64','Brasilia':'#8cac7f'},
                     labels = dict( Loja = ""))
-    bar_graph.update_layout(showlegend=False, title_font_size=22)
+    bar_graph.update_layout(showlegend=False, title_font_size=16)
     bar_graph.update_traces(hovertemplate='<b>Cidade</b> = %{label}<br><b>Total</b> = %{value}<extra></extra>')
     bar_graph.update_layout(plot_bgcolor="#F5F5F5")
-    bar_graph.update_layout(hoverlabel=dict(bgcolor="white",font_size=18))    
-    bar_graph.update_yaxes(tickwidth=3, tickfont=dict(color="black", size=16))
+    bar_graph.update_layout(hoverlabel=dict(bgcolor="white",font_size=16))    
+    bar_graph.update_yaxes(tickwidth=3, tickfont=dict(color="black", size=14))
     return bar_graph
 
 
@@ -395,8 +395,8 @@ def update_plot(input_produto, input_country):
                     title="Unidades vendidas por Cidade",)
     tree_fig.update_coloraxes(showscale=False)
     tree_fig.update_traces(hovertemplate='<b>Cidade =</b> %{label}<br><b>Total =</b> %{value}<extra></extra>')
-    tree_fig.update_layout(hoverlabel=dict(font_size=18))
-    tree_fig.update_layout(title_font_size=22) 
+    tree_fig.update_layout(hoverlabel=dict(font_size=16))
+    tree_fig.update_layout(title_font_size=15) 
     tree_fig.update_layout(font_size=16)
 
     return tree_fig
