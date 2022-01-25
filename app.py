@@ -78,7 +78,7 @@ app.layout = dbc.Container([
     dbc.Row([
         dbc.Col([
             dbc.Card([
-                dbc.CardHeader('Faturamento', className="fw-bold fs-6 text"),
+                dbc.CardHeader('Faturamento (R$)', className="fw-bold fs-6 text"),
                 dbc.CardBody([
                     html.H5(id='content-connections', children="000")
                 ], style={'textAlign':'center'})
@@ -172,7 +172,7 @@ def update_small_cards(input_product, input_country):
         vendasc = vendasc[vendasc['Loja'] == country_filter] 
      
     conctns_num = vendasc['Faturamento'].sum()
-    return f'R$ {conctns_num:,1f}'
+    return f'R$ {conctns_num:,}'
 
 
 # Unidades vendidas
