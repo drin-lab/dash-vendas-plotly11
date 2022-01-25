@@ -284,9 +284,9 @@ def update_plot(input_country, input_product):
                             title="Faturamento por produto",
                             labels = dict(Produto="", Total="Faturamento"))
     bar_fig_produto.update_layout(showlegend=False, title_font_size=16)
-    bar_fig_produto.update_xaxes(tickwidth=3, tickfont=dict(color="black", size=14))
+    bar_fig_produto.update_xaxes(tickwidth=3, tickfont=dict(color="black", size=12))
     bar_fig_produto.update_traces(hovertemplate='<b>Produto</b> = %{label}<br><b>Total</b> = %{value}<extra></extra>')
-    bar_fig_produto.update_layout(hoverlabel=dict(bgcolor="white",font_size=16))
+    bar_fig_produto.update_layout(hoverlabel=dict(bgcolor="white",font_size=14))
     bar_fig_produto.update_layout(plot_bgcolor="#F5F5F5")
 
     return bar_fig_produto
@@ -318,16 +318,16 @@ def update_plot(input_produto, input_country):
     line_graph.update_xaxes(
     ticktext=["Janeiro","Fevereiro","Marco" ,"Abril","Maio" ,"Junho","Julho", "Agosto","Setembro","Outubro","Novembro","Dezembro"],
     tickvals=[1,2,3,4,5,6,7,8,9,10,11,12],
-    tickwidth=3, tickfont=dict(color='black', size=14))
+    tickwidth=3, tickfont=dict(color='black', size=12))
     line_graph.update_layout(title_font_size=16)
-    line_graph.update_layout(hoverlabel=dict(font_size=16))
+    line_graph.update_layout(hoverlabel=dict(font_size=14))
     line_graph.update_layout(plot_bgcolor="#F5F5F5")
     line_graph.update_traces(mode='lines+markers')
     
     line_graph.update_layout(
     legend=dict( 
             font=dict(
-            size= 14,
+            size= 10,
             color="black"
         ),
         bgcolor="#F5F5F5",        
@@ -366,7 +366,7 @@ def update_plot(input_produto, input_country):
     bar_graph.update_traces(hovertemplate='<b>Cidade</b> = %{label}<br><b>Total</b> = %{value}<extra></extra>')
     bar_graph.update_layout(plot_bgcolor="#F5F5F5")
     bar_graph.update_layout(hoverlabel=dict(bgcolor="white",font_size=16))    
-    bar_graph.update_yaxes(tickwidth=3, tickfont=dict(color="black", size=14))
+    bar_graph.update_yaxes(tickwidth=3, tickfont=dict(color="black", size=12))
     return bar_graph
 
 
@@ -395,9 +395,9 @@ def update_plot(input_produto, input_country):
                     title="Unidades vendidas por Cidade",)
     tree_fig.update_coloraxes(showscale=False)
     tree_fig.update_traces(hovertemplate='<b>Cidade =</b> %{label}<br><b>Total =</b> %{value}<extra></extra>')
-    tree_fig.update_layout(hoverlabel=dict(font_size=16))
-    tree_fig.update_layout(title_font_size=15) 
-    tree_fig.update_layout(font_size=16)
+    tree_fig.update_layout(hoverlabel=dict(font_size=14))
+    tree_fig.update_layout(title_font_size=16) 
+    tree_fig.update_layout(font_size=12)
 
     return tree_fig
 
