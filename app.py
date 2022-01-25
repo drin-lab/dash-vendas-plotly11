@@ -94,7 +94,7 @@ app.layout = dbc.Container([
         ], width=2),
         dbc.Col([
             dbc.Card([
-                dbc.CardHeader('Preço Médio',className="fw-bold fs-6 text"),
+                dbc.CardHeader('Preço Médio (R$)',className="fw-bold fs-6 text"),
                 dbc.CardBody([                    
                     html.H5(id='content-msg-in', children="000")
                 ], style={'textAlign':'center'})
@@ -211,7 +211,7 @@ def update_small_cards(input_country, input_product):
         vendasc = vendasc[vendasc['Loja'] == country_filter] 
     
     in_num = round(vendasc['Preco'].mean(),2)
-    return f"R$ {in_num:,}"
+    return f"{in_num:,}"
     
 # Itens Unicos a venda
 @app.callback(
