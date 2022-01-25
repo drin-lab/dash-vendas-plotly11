@@ -172,7 +172,7 @@ def update_small_cards(input_product, input_country):
         vendasc = vendasc[vendasc['Loja'] == country_filter] 
      
     conctns_num = vendasc['Faturamento'].sum()
-    return f'R$ {conctns_num:,}'
+    return f'R$ {round(conctns_num):,}'
 
 
 # Unidades vendidas
