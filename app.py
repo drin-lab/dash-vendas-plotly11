@@ -172,7 +172,7 @@ def update_small_cards(input_product, input_country):
         vendasc = vendasc[vendasc['Loja'] == country_filter] 
      
     conctns_num = vendasc['Faturamento'].sum()
-    return f'R$ {conctns_num:,}'
+    return f'R$ {conctns_num:,1f}'
 
 
 # Unidades vendidas
@@ -284,10 +284,11 @@ def update_plot(input_country, input_product):
                             title="Faturamento por produto",
                             labels = dict(Produto="", Total="Faturamento"))
     bar_fig_produto.update_layout(showlegend=False, title_font_size=16)
-    bar_fig_produto.update_xaxes(tickwidth=3, tickfont=dict(color="black", size=12))
+    bar_fig_produto.update_xaxes(tickwidth=3, tickfont=dict(color="black", size=14))
     bar_fig_produto.update_traces(hovertemplate='<b>Produto</b> = %{label}<br><b>Total</b> = %{value}<extra></extra>')
     bar_fig_produto.update_layout(hoverlabel=dict(bgcolor="white",font_size=14))
     bar_fig_produto.update_layout(plot_bgcolor="#F5F5F5")
+
 
     return bar_fig_produto
 
