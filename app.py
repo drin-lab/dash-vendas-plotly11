@@ -314,7 +314,7 @@ def update_plot(input_produto, input_country):
                     x = 'Mes_Vendas_Num',
                     y= 'Faturamento', 
                     color = 'Loja',
-                    labels = dict(Mes_Vendas_Num="Mês", Faturamento= "Faturamento"))
+                    labels = dict(Mes_Vendas_Num="Mês", Faturamento= "Faturamento", font_size=10))
     line_graph.update_xaxes(
     ticktext=["Janeiro","Fevereiro","Marco" ,"Abril","Maio" ,"Junho","Julho", "Agosto","Setembro","Outubro","Novembro","Dezembro"],
     tickvals=[1,2,3,4,5,6,7,8,9,10,11,12],
